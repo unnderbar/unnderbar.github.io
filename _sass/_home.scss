@@ -1,0 +1,129 @@
+.amp {
+  font-weight: 300;
+  font-style: italic;
+}
+
+.underline {
+  font-size: 25px;
+  font-style: italic;
+  display: inline-block;
+  text-align: center;
+  &:after {
+    background-image: linear-gradient(-163deg, #CBFB81 0%, #74FCD5 100%);
+    width:100%;
+    height:2px;
+    content:" ";
+    display: block;
+  }
+}
+
+.header {
+  height:100vh;
+  width:100%;
+  background-image: linear-gradient(-163deg, #CBFB81 0%, #74FCD5 100%);
+  .header-content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+  }
+  .header-title {
+    font-size:100px;
+    line-height: 1;
+    font-weight: bold;
+    margin:0 0 10px;
+  }
+  .header-tagline {
+    font-size:55px;
+    line-height: 1;
+    font-weight: bold;
+    margin:0;
+    color:#fff;
+  }
+}
+
+.intro {
+  display: flex;
+  .intro-image,
+  .intro-content {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    flex: 1;
+  }
+  .intro-image {
+    background:url(/images/unn.jpg) no-repeat center center;
+    background-size:cover;
+  }
+  .intro-content {
+    padding:50px;
+  }
+  .intro-title {
+    @extend .underline;
+  }
+}
+
+.work {
+  padding:50px 0;
+  text-align: center;
+  background-color: rgba(0,255,198,0.1);
+  .work-title {
+    @extend .underline;
+    margin:0 0 50px;
+    padding:0;
+    text-align: center;
+  }
+  .work-places {
+    display: flex;
+    margin:0 20px;
+  }
+  .work-place {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    flex: 1;
+    padding:10px 30px;
+  }
+  .work-place-logo {
+    margin:0 0 20px;
+  }
+  .work-place-logo-expressen {
+    @extend .work-place-logo;
+  }
+  .work-place-logo-aftonbladet {
+    @extend .work-place-logo;
+  }
+  .work-place-logo-netlight {
+    @extend .work-place-logo;
+  }
+  .work-place-logo-cook {
+    @extend .work-place-logo;
+  }
+  .work-cv {
+    margin:0;
+    padding:50px 0;
+    text-align: center;
+  }
+}
+
+.talks {
+  padding:50px 0;
+  text-align: center;
+  .talks-title {
+    @extend .underline;
+  }
+}
+
+.tweets {
+  background-color: rgba(0,255,198,0.1);
+  display: flex;
+  margin:0;
+  padding:20px 15px;
+  .tweet {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    flex: 1;
+    padding:10px 15px;
+  }
+}
