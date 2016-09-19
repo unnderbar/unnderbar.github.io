@@ -1,3 +1,9 @@
+$content-width: 600px;
+
+p a {
+  font-weight:500;
+}
+
 .amp {
   font-weight: 300;
   font-style: italic;
@@ -15,6 +21,12 @@
     content:" ";
     display: block;
   }
+}
+
+%smaller-title {
+  font-weight: bold;
+  font-size: 23px;
+  margin:0;
 }
 
 .header {
@@ -66,7 +78,7 @@
     flex: 1;
   }
   .intro-image {
-    background:url(/images/unn.jpg) no-repeat center center;
+    background:url(/images/unn.jpg) no-repeat top center;
     background-size:cover;
     min-height: 400px;
   }
@@ -91,30 +103,51 @@
   .work-places {
     margin:0 20px;
     @include media-query(800px) {
+      display: -webkit-flex;
       display: flex;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-flex-flow: row wrap;
+      flex-flow: row wrap;
     }
   }
   .work-place {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    flex: 1;
     padding:10px 30px;
+    @include media-query(800px) {
+      width:250px
+    }
   }
   .work-place-logo {
-    margin:0 0 20px;
+    margin:0 auto 20px;
+    width:190px;
+    height:60px;
+    text-indent: -10000px;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .work-place-logo-mic {
+    @extend .work-place-logo;
+    background-image: url(/images/mic.png);
   }
   .work-place-logo-expressen {
     @extend .work-place-logo;
+    background-image: url(/images/expressen.png);
   }
   .work-place-logo-aftonbladet {
     @extend .work-place-logo;
+    background-image: url(/images/aftonbladet.png);
   }
   .work-place-logo-netlight {
     @extend .work-place-logo;
+    background-image: url(/images/netlight.png);
   }
   .work-place-logo-cook {
     @extend .work-place-logo;
+    background-image: url(/images/thomas-cook.png);
   }
   .work-cv {
     margin:0;
@@ -124,25 +157,71 @@
 }
 
 .talks {
-  padding:50px 0;
+  padding:50px 30px;
   text-align: center;
+  margin:0 auto;
+  @include media-query(800px) {
+    width:$content-width;
+  }
   .talks-title {
     @extend .underline;
+    margin-bottom:60px;
+  }
+
+  .talk {
+    position: relative;
+    margin:0 0 60px;
+    @include media-query(800px) {
+      text-align: left;
+      padding-left: 240px;
+    }
+    &:last-child {
+      margin-bottom:0;
+    }
+    .talk-image {
+      width: 200px;
+      margin:0 0 20px;
+      @include media-query(800px) {
+        position: absolute;
+        left:0;
+        top:0;
+      }
+    }
+    .talk-title {
+      @extend %smaller-title;
+    }
+    .talk-description {
+      margin:0;
+    }
+    .talk-video {
+      font-weight: 500;
+    }
   }
 }
 
 .tweets {
   background-color: rgba(0,255,198,0.1);
   margin:0;
-  padding:20px 15px;
-  @include media-query(800px) {
-    display: flex;
+  padding:30px 15px;
+  text-align: center;
+
+  .tweets-title {
+    @extend .underline;
+    margin-bottom:40px;
+  }
+  .tweets-column {
+    @include media-query(800px) {
+      float:left;
+      width:33%;
+    }
   }
   .tweet {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    flex: 1;
     padding:10px 15px;
+  }
+  .tweets-clearfix {
+    @extend %clearfix;
   }
 }
